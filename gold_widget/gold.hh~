@@ -1,0 +1,65 @@
+#ifndef GOLD_HH
+#define GOLD_HH
+
+#include <QCoreApplication>
+#include <QMainWindow>
+#include <QPushButton>
+#include <QLabel>
+#include <QTextEdit>
+#include <QVBoxLayout>
+#include <QComboBox>
+#include <QDebug>
+////////////////////////////////////////////////////////////////////////////////
+
+class Gold : public QWidget{
+  Q_OBJECT
+private:
+  qint32 gold=0;
+  qint32 bank=0;
+  qint32 to_bank=0;
+  qint32 to_friend=0;
+  
+  QVBoxLayout *main_layout;
+  QHBoxLayout *bank_1_layout;
+  QHBoxLayout *bank_2_layout;
+  QHBoxLayout *friend_1_layout;
+  QHBoxLayout *friend_2_layout;
+
+  QLabel *gold_label;
+  QLabel *bank_label;
+  QLabel *friend_label;
+
+  QPushButton *bank_p1000_button;
+  QPushButton *bank_p100_button;
+  QPushButton *bank_p10_button;
+  QPushButton *bank_p1_button;
+
+  QPushButton *bank_m1000_button;
+  QPushButton *bank_m100_button;
+  QPushButton *bank_m10_button;
+  QPushButton *bank_m1_button;
+
+  QPushButton *friend_p1000_button;
+  QPushButton *friend_p100_button;
+  QPushButton *friend_p10_button;
+  QPushButton *friend_p1_button;
+
+  QPushButton *friend_m1000_button;
+  QPushButton *friend_m100_button;
+  QPushButton *friend_m10_button;
+  QPushButton *friend_m1_button;
+  
+public:
+  explicit Gold(QWidget *parent = 0);
+  QStringList Generate_messages();
+  void Set_gold(qint32 g);
+  void Set_bank(qint32 b);
+  
+signals:
+
+private slots:
+  void Set_friend_slot(qint32 f);
+  void Set_bank_slot(qint32 b);
+};
+////////////////////////////////////////////////////////////////////////////////
+#endif

@@ -1,0 +1,48 @@
+#include "gold.hh"
+ 
+
+////////////////////////////////////////////////////////////////////////////////
+//FUNCTIONS
+Gold::Gold(QWidget *parent) : QWidget(parent){
+
+  main_layout = new QVBoxLayout(this);
+
+  bank_1_layout = new QHBoxLayout();
+
+  bank_2_layout = new QHBoxLayout();
+
+  friend_1_layout = new QHBoxLayout();
+
+  friend_2_layout = new QHBoxLayout();
+
+
+  gold_label = new QLabel("GOLD");
+  bank_label = new QLabel("Bank");
+  friend_label = new QLabel("Freind");
+
+
+  main_layout->addWidget(gold_label);
+  main_layout->addWidget(bank_label);
+  main_layout->addLayout(bank_1_layout);
+  main_layout->addLayout(bank_2_layout);
+  main_layout->addWidget(friend_label);
+  main_layout->addLayout(friend_1_layout);
+  main_layout->addLayout(friend_2_layout);
+
+
+  
+  // connect(connect_button, SIGNAL (released()), this, SLOT (Connect()));
+    
+  setLayout(main_layout);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//SLOTS
+void Gold::Set_friend_slot(qint32 f){
+
+}
+
+void Gold::Set_bank_slot(qint32 b){
+
+}
+
