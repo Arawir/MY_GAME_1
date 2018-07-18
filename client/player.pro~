@@ -1,0 +1,19 @@
+QT += core network widgets 
+requires(qtConfig(combobox))
+
+HEADERS       = Inc/server.hh \
+                Inc/gui.hh \
+                Inc/main_app.hh \
+                Inc/client.hh \
+                Inc/player.hh
+                
+SOURCES       = Src/server.cpp \
+                Src/gui.cpp \
+                Src/main_app.cpp \
+                Src/main.cpp \
+                Src/client.cpp \
+                Src/player.cpp
+
+# install
+target.path = $$[QT_INSTALL_EXAMPLES]/network/fortuneclient
+INSTALLS += target

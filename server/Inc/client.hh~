@@ -1,0 +1,31 @@
+#ifndef CLIENT_HH
+#define CLIENT_HH
+
+#include <QObject>
+#include <QDebug>
+#include <QTcpServer>
+#include <QTcpSocket>
+#include <QtTest/QtTest>
+///////////////////////////////////////////////////////////////////////////////
+class Client : public QObject{
+Q_OBJECT
+private:
+  QString id;
+  QTcpSocket *socket;
+  QList<QString> messages;
+public:
+  explicit Client(QObject *parent = 0);
+  void Send_message(QString data);
+  void Connect_to_socket(QTcpSocket *s);
+  QString Pull_message();
+  bool Messages_empty(){ return messages.isEmpty(); }
+  QString Id(){ return id; }
+  void Set_id(QString nid){ id = nid; }
+signals:
+  void New_message();
+public slots:
+  void Receive_message();
+};
+
+////////////////////////////////////////////////////////////////////////////////
+#endif

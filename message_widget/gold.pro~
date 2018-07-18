@@ -1,0 +1,10 @@
+QT += core widgets 
+requires(qtConfig(combobox))
+
+HEADERS       = gold.hh
+                
+SOURCES       = gold.hh main.hh 
+
+# install
+target.path = $$[QT_INSTALL_EXAMPLES]/network/fortuneclient
+INSTALLS += target
